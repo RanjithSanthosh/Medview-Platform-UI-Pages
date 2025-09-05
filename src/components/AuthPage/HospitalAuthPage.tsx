@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 
-const RadiologistAuthPage: React.FC = () => {
+const HospitalAuthPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,22 +12,22 @@ const RadiologistAuthPage: React.FC = () => {
 
   const testimonials = [
     {
-      quote: "The 5C Network platform allows me to report studies from anywhere, anytime. The workflow is smooth and efficient.",
-      name: "Dr. Arvind Menon",
-      role: "Consultant Radiologist",
-      company: "Freelance"
+      quote: "This platform has made our radiology workflow seamless. Reports are always on time and accessible in the required format.",
+      name: "Dr. Priya Sharma",
+      role: "Head of Radiology",
+      company: "City Hospital"
     },
     {
-      quote: "I can focus on diagnosis without worrying about technical hassles. The platform is built for radiologists!",
-      name: "Dr. Sneha Rao",
-      role: "Radiologist",
-      company: "City Imaging Centre"
+      quote: "The integration with our diagnostic center was smooth and the support team is excellent.",
+      name: "Ramesh Kumar",
+      role: "Lab Manager",
+      company: "Sunrise Diagnostics"
     },
     {
-      quote: "The case assignment and reporting tools are top-notch. My productivity has increased significantly.",
-      name: "Dr. Karthik Iyer",
-      role: "Senior Radiologist",
-      company: "Metro Hospitals"
+      quote: "We can now deliver faster and more accurate reports to our patients, thanks to this platform.",
+      name: "Anita Desai",
+      role: "Technician",
+      company: "Metro Medical Centre"
     }
   ];
 
@@ -42,7 +42,7 @@ const RadiologistAuthPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle authentication logic here
-    console.log('Radiologist Login attempt:', { email, password });
+    console.log('Hospital Login attempt:', { email, password });
   };
 
   return (
@@ -68,15 +68,17 @@ const RadiologistAuthPage: React.FC = () => {
             </div>
             
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-medical-yellow-300 to-yellow-400 bg-clip-text text-transparent">
-              Borderless Radiology Platform
+              India's Digital Diagnostics Platform
             </h1>
             
             <p className="text-lg text-gray-200 mb-8">
-              Welcome, Radiologist! Report studies from anywhere, anytime.
+              Welcome to the future of radiology and diagnostics.
             </p>
             
             <p className="text-gray-300 leading-relaxed">
-              CyberTechNinja empowers radiologists with seamless access to cases, efficient reporting tools, and a collaborative environment to deliver the best patient care.
+              Fast, smooth, intuitive and supported by cutting-edge technology, 
+              CyberTechNinja's platform brings out the best in your hospital or diagnostic center, 
+              so you can deliver better care and faster results to your patients.
             </p>
           </div>
 
@@ -91,7 +93,7 @@ const RadiologistAuthPage: React.FC = () => {
                   <p className="font-semibold text-white text-lg">
                     {testimonials[currentTestimonial].name}
                   </p>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-300 text-sm">
                     {testimonials[currentTestimonial].role}, {testimonials[currentTestimonial].company}
                   </p>
                 </div>
@@ -130,9 +132,9 @@ const RadiologistAuthPage: React.FC = () => {
             {/* Title */}
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-3">
-                Radiologist Login
+                Hospital/Diagnostic Centre Login
               </h2>
-              <p className="text-gray-600">Sign in to access your radiology dashboard</p>
+              <p className="text-gray-600">Sign in to access your dashboard</p>
             </div>
 
             {/* Login Form */}
@@ -203,4 +205,4 @@ const RadiologistAuthPage: React.FC = () => {
   );
 };
 
-export default RadiologistAuthPage;
+export default HospitalAuthPage;

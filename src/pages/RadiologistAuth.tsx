@@ -1,4 +1,4 @@
-import RadiologistAuthPage from '@/components/RadiologistAuthPage';
+import RadiologistAuthPage from '@/components/AuthPage/RadiologistAuthPage';
 
 const RadiologistAuth = () => {
   return <RadiologistAuthPage />;

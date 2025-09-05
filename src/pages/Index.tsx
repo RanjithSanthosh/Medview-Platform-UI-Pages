@@ -1,4 +1,4 @@
-import MedicalDashboard from '@/components/MedicalDashboard';
+import MedicalDashboard from '@/components/BackupFiles/MedicalDashboard';
 
 const Index = () => {
   return <MedicalDashboard />;

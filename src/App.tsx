@@ -8,6 +8,10 @@ import Auth from "./pages/Auth";
 import HospitalAuth from "./pages/HospitalAuth";
 import RadiologistAuth from "./pages/RadiologistAuth";
 import NotFound from "./pages/NotFound";
+import DoctorPage from "./pages/DoctorPage";
+import CenterPage from "./pages/CenterPage";
+import StaffPage from "./pages/StaffPage";
+import MedicalDashboard from "./components/BackupFiles/MedicalDashboard";
 
 const queryClient = new QueryClient();
 
@@ -18,10 +22,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Auth />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/auth/hospital" element={<HospitalAuth />} />
           <Route path="/auth/radiologist" element={<RadiologistAuth />} />
+          <Route path="/doctor" element={<DoctorPage />} />
+          <Route path="/center" element={<CenterPage />} />
+          <Route path="/technician" element={<StaffPage />} />
+          {/* <Route path="/medical" element={<MedicalDashboard />} /> */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

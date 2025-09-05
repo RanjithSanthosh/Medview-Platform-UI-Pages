@@ -1,4 +1,4 @@
-import HospitalAuthPage from '@/components/HospitalAuthPage';
+import HospitalAuthPage from '@/components/AuthPage/HospitalAuthPage';
 
 const HospitalAuth = () => {
   return <HospitalAuthPage />;
