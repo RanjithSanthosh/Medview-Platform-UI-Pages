@@ -81,31 +81,70 @@ No intracranial hemorrhage, mass, mass effect or midline shift.
     alert("Report sent!");
   };
 
+
+
   const handlePreview = () => {
-    const previewWindow = window.open("", "Preview", "width=900,height=700");
-    if (previewWindow) {
-      previewWindow.document.open();
-      previewWindow.document.write(`
-        <html>
-          <head>
-            <title>Report Preview</title>
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <style>
-              body { font-family: Arial, Helvetica, sans-serif; padding: 20px; }
-              h1 { font-size: 18px; margin-bottom: 8px; }
-            </style>
-          </head>
-          <body>
-            <h1>Patient Report — ${defaultPatient.name} (${defaultPatient.id})</h1>
-            <div>${reportContent}</div>
-          </body>
-        </html>
-      `);
-      previewWindow.document.close();
-    } else {
-      alert("Unable to open preview window (popup blocked).");
-    }
-  };
+  const previewWindow = window.open("", "Preview", "width=900,height=700");
+  if (previewWindow) {
+    previewWindow.document.open();
+
+    // Create an HTML table with patient details similar to the main UI table
+    const patientTableHTML = `
+      <table style="width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px;">
+        <tbody>
+          <tr style="border-bottom: 1px solid #ccc;">
+            <td style="padding: 8px; font-weight: bold;">Patient Name</td>
+            <td style="padding: 8px; color: #1e40af;">${defaultPatient.name}</td>
+            <td style="padding: 8px; font-weight: bold;">Patient ID</td>
+            <td style="padding: 8px;">${defaultPatient.id}</td>
+            <td style="padding: 8px; font-weight: bold;">Age/DOB (YYYYMMDD)</td>
+            <td style="padding: 8px;">${defaultPatient.ageDOB || "-"}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ccc;">
+            <td style="padding: 8px; font-weight: bold;">Gender</td>
+            <td style="padding: 8px;">${defaultPatient.gender}</td>
+            <td style="padding: 8px; font-weight: bold;">Study</td>
+            <td style="padding: 8px; color: #1e40af;">${defaultPatient.study}</td>
+            <td style="padding: 8px; font-weight: bold;">Modality</td>
+            <td style="padding: 8px;">${defaultPatient.modality}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; font-weight: bold;">Referring Doctor</td>
+            <td style="padding: 8px;">${defaultPatient.referringDoctor}</td>
+            <td style="padding: 8px; font-weight: bold;">Patient Type</td>
+            <td style="padding: 8px;">${defaultPatient.patientType}</td>
+            <td style="padding: 8px; font-weight: bold;">Date</td>
+            <td style="padding: 8px; color: #1e40af;">${defaultPatient.date}</td>
+          </tr>
+        </tbody>
+      </table>
+    `;
+
+    previewWindow.document.write(`
+      <html>
+        <head>
+          <title>Report Preview</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <style>
+            body { font-family: Arial, Helvetica, sans-serif; padding: 20px; }
+            h1 { font-size: 18px; margin-bottom: 8px; }
+            table { border: 1px solid #ccc; }
+            td { border: 1px solid #ccc; }
+          </style>
+        </head>
+        <body>
+      
+          <h1>Patient Report — ${defaultPatient.name} </h1>
+          ${patientTableHTML}
+          <div>${reportContent}</div>
+        </body>
+      </html>
+    `);
+    previewWindow.document.close();
+  } else {
+    alert("Unable to open preview window (popup blocked).");
+  }
+};
 
   return (
     <div className="p-6 bg-gray-100">

@@ -69,7 +69,7 @@ interface DoctorSidebarProps {
 
 const navItems = [
   { name: "Dashboard", icon: <FaTachometerAlt />, view: "dashboard" },
-  { name: "Assigned Case", icon: <FaHistory />, view: "assigned" },
+  { name: "Assign Case", icon: <FaHistory />, view: "assigned" },
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
   { name: "Profile", icon: <FaUser />, view: "profile" },
 ];
