@@ -184,6 +184,22 @@ const AuthRoleSelect: React.FC = () => {
               </div>
             </div>
           </button>
+          <button
+            onClick={() => navigate('/admin')}
+            className="group flex flex-col items-center p-10 bg-gradient-to-br from-medical-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-medical-blue hover:scale-105 focus:outline-none relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10">
+              <div className="w-24 h-24 bg-gradient-to-br from-medical-blue to-medical-blue-dark rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <FiUser className="w-12 h-12 text-white" />
+              </div>
+              <span className="text-xl font-bold text-medical-blue-dark group-hover:text-medical-blue">Admin</span>
+              <div className="flex items-center mt-4 text-medical-blue opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-sm mr-2">Admin Access</span>
+                <FiArrowRight className="w-4 h-4 transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </button>
         </div>
 
         {/* Auth Section */}

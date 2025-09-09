@@ -58,6 +58,8 @@ import Legend from '@/components/TechnicianPage/Legend';
 import TechnicianDashboard from '@/components/TechnicianPage/TechnicianDashboard';
 import TechnicianProfile from '@/components/TechnicianPage/TechnecianProfile';
 import TechnicianAssigned from '@/components/TechnicianPage/AssignedCases';
+import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
+import SupportPage from '@/components/SupportPage/SupportPage';
 
 
 
@@ -84,10 +86,22 @@ const StaffPage: React.FC = () => {
             <TechnicianDashboard />
           </>
         );
+      case 'support':
+        return (
+          <>
+            <SupportPage />
+          </>
+        );
         case 'profile':
         return (
           <>
             <TechnicianProfile />
+          </>
+        );
+        case 'chat':
+        return (
+          <>
+            <ChatFunctionality />
           </>
         );
       case 'completed':

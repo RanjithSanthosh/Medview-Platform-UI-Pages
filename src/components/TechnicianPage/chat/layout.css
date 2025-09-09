@@ -1,0 +1,97 @@
+/* --- Main Layout & Structure --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* A light grey background for the whole page */
+}
+
+.app__container {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1600px;
+  margin: 0 auto; /* Center the app on larger screens */
+}
+
+/* --- Sidebar: Channel List --- */
+.sidebar__container {
+  width: 300px;
+  min-width: 300px;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Main Chat Window --- */
+.channel__container {
+  flex: 1; /* This makes the chat window take up the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- UI Enhancements & Overrides --- */
+
+/* Custom prompt for when no channel is selected */
+.unselected-channel-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: #858585;
+}
+.unselected-channel-prompt h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+/* Make channel preview items cleaner */
+.str-chat__channel-list {
+  height: 100% !important; /* Ensure list takes full height */
+}
+
+.str-chat__channel-preview-messenger {
+  padding: 12px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  transition: background-color 0.2s ease;
+}
+
+.str-chat__channel-preview-messenger:hover {
+  background-color: #f7f7f7;
+}
+
+.str-chat__channel-preview-messenger--active {
+  background-color: #005fff;
+  color: white;
+}
+
+/* Make the selected channel's text readable */
+.str-chat__channel-preview-messenger--active .str-chat__channel-preview-last-message,
+.str-chat__channel-preview-messenger--active .str-chat__channel-preview-last-message-by,
+.str-chat__channel-preview-messenger--active .str-chat__channel-preview-timestamp {
+    color: #e0e0e0;
+}
+
+/* Cleaner message input */
+.str-chat__input-flat {
+  background-color: #f7f7f8;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  padding: 0 15px;
+}
+
+.str-chat__input-flat .str-chat__textarea textarea {
+  background-color: transparent;
+}
+
+.str-chat__message-input-container {
+  padding: 15px 20px;
+}
