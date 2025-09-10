@@ -120,6 +120,7 @@ const navItems = [
    { name: "Support", icon: <SlSupport />, view: "support" },
   { name: "Chat", icon: <FaMessage />, view: "chat" },
   { name: "Institution Payments", icon: <RiMoneyRupeeCircleFill />, view: "institution-payments" },
+  { name: "Doctor Payments", icon: <RiMoneyRupeeCircleFill />, view: "doctor-payments" },
   // { name: "Payment Invoice", icon: <FaCheckCircle />, view: "payment-invoice" },
 ];
 

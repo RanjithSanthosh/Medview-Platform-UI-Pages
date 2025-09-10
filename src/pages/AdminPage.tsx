@@ -17,6 +17,7 @@ import PaymentInvoice from '@/components/AdminPage/PaymentInvoice';
 import SupportPage from '@/components/SupportPage/SupportPage';
 import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
 import InstitutionPayment from '@/components/AdminPage/InstitutionReceiptsPage';
+import DoctorPayment from '@/components/AdminPage/DoctorPaymentHistory';
 
 
 
@@ -112,6 +113,17 @@ const CenterPage: React.FC = () => {
           <>
 
             <InstitutionPayment
+             
+              handleViewStudy={handleViewStudy}
+            />
+            <Legend />
+          </>
+        );
+      case 'doctor-payments':
+        return (
+          <>
+
+            <DoctorPayment
              
               handleViewStudy={handleViewStudy}
             />

@@ -6,6 +6,7 @@ import DoctorDashboard from '@/components/DoctorPage/DoctorDashboard';
 import DoctorStudiesTable from '@/components/DoctorPage/DoctorStudiesTable';
 import DoctorProfile from '@/components/DoctorPage/DoctorProfile';
 import DoctorPaymentPage from '@/components/DoctorPage/DoctorPaymentPage';
+import DoctorPaymentHistoryPage from '@/components/DoctorPage/PaymentHistory';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 // Add import
@@ -34,6 +35,8 @@ const DoctorPage = () => {
           return <DoctorHistory />;
         case 'profile':
           return <DoctorProfile />;
+        case 'payment-history':
+          return <DoctorPaymentHistoryPage />;
         default:
           return <DoctorDashboard />;
       }

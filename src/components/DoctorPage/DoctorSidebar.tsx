@@ -80,6 +80,7 @@ const navItems = [
   { name: 'Payment', icon: <FaWallet />, view: 'payment' },
   { name: 'History', icon: <FaHistory />, view: 'history' },
   { name: 'Profile', icon: <FaUser />, view: 'profile' },
+  { name: 'Payment History', icon: <FaUser />, view: 'payment-history' },
 ];
 
 const DoctorSidebar: React.FC<DoctorSidebarProps> = ({

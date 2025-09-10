@@ -109,6 +109,7 @@ const navItems = [
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
   { name: "Profile", icon: <FaUser />, view: "profile" },
   { name: "Payment History", icon: <RiMoneyRupeeCircleFill />, view: "payment-history" },
+  { name: "Pay Management", icon: <RiMoneyRupeeCircleFill />, view: "pay-management" },
 ];
 
 const DoctorSidebar: React.FC<DoctorSidebarProps> = ({
