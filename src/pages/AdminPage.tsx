@@ -16,6 +16,7 @@ import AssignHistory from '@/components/AdminPage/CaseHistoryDashboard';
 import PaymentInvoice from '@/components/AdminPage/PaymentInvoice';
 import SupportPage from '@/components/SupportPage/SupportPage';
 import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
+import InstitutionPayment from '@/components/AdminPage/InstitutionReceiptsPage';
 
 
 
@@ -100,6 +101,17 @@ const CenterPage: React.FC = () => {
           <>
 
             <CenterDashboard
+             
+              handleViewStudy={handleViewStudy}
+            />
+            <Legend />
+          </>
+        );
+      case 'institution-payments':
+        return (
+          <>
+
+            <InstitutionPayment
              
               handleViewStudy={handleViewStudy}
             />

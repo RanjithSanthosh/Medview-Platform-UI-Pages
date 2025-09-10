@@ -99,6 +99,8 @@ import { FaMessage } from "react-icons/fa6"; // close button icon
 import { MdOutlineSecurity } from "react-icons/md";
 import { MdOutlinePayment } from "react-icons/md";
 import { MdHistoryEdu } from "react-icons/md";
+import { RiMoneyRupeeCircleFill } from "react-icons/ri";
+
 
 interface DoctorSidebarProps {
   currentView: string;
@@ -114,10 +116,10 @@ const navItems = [
   { name: "Institution Audit", icon: <MdOutlineSecurity />, view: "institution-audit" },
   { name: "Technician Audit", icon: <MdOutlineSecurity />, view: "technician-audit" },
   { name: "Payment Approval", icon: <MdOutlinePayment />, view: "payment-approval" },
-  { name: "Case History", icon: <MdHistoryEdu />
-, view: "case-history" },
+  { name: "Case History", icon: <MdHistoryEdu />, view: "case-history" },
    { name: "Support", icon: <SlSupport />, view: "support" },
   { name: "Chat", icon: <FaMessage />, view: "chat" },
+  { name: "Institution Payments", icon: <RiMoneyRupeeCircleFill />, view: "institution-payments" },
   // { name: "Payment Invoice", icon: <FaCheckCircle />, view: "payment-invoice" },
 ];
 

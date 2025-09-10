@@ -515,6 +515,7 @@ import Legend from '@/components/CenterPage/Legend';
 import CompletedStudiesTable from '@/components/CenterPage/CompletedStudiesTable';
 import CenterDashboard from '@/components/CenterPage/CenterDashboard';
 import CenterProfile from '@/components/CenterPage/CenterProfile';
+import PaymentHistory from '@/components/CenterPage/InstitutionPaymentPage';
 
 interface Study {
   orderId: string;
@@ -597,6 +598,17 @@ const CenterPage: React.FC = () => {
           <>
 
             <CenterDashboard
+             
+              handleViewStudy={handleViewStudy}
+            />
+            <Legend />
+          </>
+        );
+      case 'payment-history':
+        return (
+          <>
+
+            <PaymentHistory
              
               handleViewStudy={handleViewStudy}
             />

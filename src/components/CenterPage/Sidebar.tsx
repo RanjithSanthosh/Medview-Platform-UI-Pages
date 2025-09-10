@@ -94,6 +94,7 @@ import {
   FaHistory,
 } from "react-icons/fa";
 import { FiX } from "react-icons/fi"; // close icon
+import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 
 interface DoctorSidebarProps {
   currentView: string;
@@ -107,6 +108,7 @@ const navItems = [
   { name: "Assigned Case", icon: <FaHistory />, view: "assigned" },
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
   { name: "Profile", icon: <FaUser />, view: "profile" },
+  { name: "Payment History", icon: <RiMoneyRupeeCircleFill />, view: "payment-history" },
 ];
 
 const DoctorSidebar: React.FC<DoctorSidebarProps> = ({
