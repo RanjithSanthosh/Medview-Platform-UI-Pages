@@ -18,6 +18,8 @@ import SupportPage from '@/components/SupportPage/SupportPage';
 import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
 import InstitutionPayment from '@/components/AdminPage/InstitutionReceiptsPage';
 import DoctorPayment from '@/components/AdminPage/DoctorPaymentHistory';
+import DoctorDetailes from '@/components/AdminPage/DoctorDetailes';
+import TechnicianDetailes from '@/components/AdminPage/TechnicianDetailes';
 
 
 
@@ -105,7 +107,29 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+            
+          </>
+        );
+      case 'doctor':
+        return (
+          <>
+
+            <DoctorDetailes
+             
+              handleViewStudy={handleViewStudy}
+            />
+       
+          </>
+        );
+      case 'technician':
+        return (
+          <>
+
+            <TechnicianDetailes
+             
+              handleViewStudy={handleViewStudy}
+            />
+          
           </>
         );
       case 'institution-payments':
@@ -116,7 +140,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'doctor-payments':
@@ -127,7 +151,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'support':
@@ -138,7 +162,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'chat':
@@ -149,7 +173,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+          
           </>
         );
       case 'payment-invoice':
@@ -160,7 +184,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'case-history':
@@ -171,7 +195,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+          
           </>
         );
       case 'payment-approval':
@@ -182,7 +206,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'institution-audit':
@@ -193,7 +217,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+        
           </>
         );
       case 'technician-audit':
@@ -204,7 +228,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'assigned':
@@ -242,7 +266,7 @@ const CenterPage: React.FC = () => {
               handleRefresh={handleRefresh}
             />
             <CompletedStudiesTable />
-            <Legend />
+            
           </>
         );
 

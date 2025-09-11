@@ -20,9 +20,9 @@ const navItems = [
   { name: "Dashboard", icon: <FaTachometerAlt />, view: "dashboard" },
   { name: "Assign Case", icon: <FaHistory />, view: "assigned" },
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
-  { name: "Profile", icon: <FaUser />, view: "profile" },
   { name: "Chat", icon: <FaMessage />, view: "chat" },
   { name: "Support", icon: <SlSupport />, view: "support" },
+  { name: "Profile", icon: <FaUser />, view: "profile" },
 ];
 
 const TechnicianSidebar: React.FC<DoctorSidebarProps> = ({

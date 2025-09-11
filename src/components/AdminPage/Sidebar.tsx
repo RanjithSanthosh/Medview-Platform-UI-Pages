@@ -26,12 +26,14 @@ const navItems = [
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
   { name: "Institution Audit", icon: <MdOutlineSecurity />, view: "institution-audit" },
   { name: "Technician Audit", icon: <MdOutlineSecurity />, view: "technician-audit" },
-  { name: "Payment Approval", icon: <MdOutlinePayment />, view: "payment-approval" },
+  { name: "Doctor", icon: <RiMoneyRupeeCircleFill />, view: "doctor" },
+  { name: "Technician", icon: <RiMoneyRupeeCircleFill />, view: "technician" },
   { name: "Case History", icon: <MdHistoryEdu />, view: "case-history" },
-   { name: "Support", icon: <SlSupport />, view: "support" },
-  { name: "Chat", icon: <FaMessage />, view: "chat" },
+  { name: "Payment Approval", icon: <MdOutlinePayment />, view: "payment-approval" },
   { name: "Institution Payments", icon: <RiMoneyRupeeCircleFill />, view: "institution-payments" },
   { name: "Doctor Payments", icon: <RiMoneyRupeeCircleFill />, view: "doctor-payments" },
+  { name: "Chat", icon: <FaMessage />, view: "chat" },
+  { name: "Support", icon: <SlSupport />, view: "support" },
   // { name: "Payment Invoice", icon: <FaCheckCircle />, view: "payment-invoice" },
 ];
 

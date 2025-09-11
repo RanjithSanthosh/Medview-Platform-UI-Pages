@@ -11,6 +11,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 // Add import
 import DoctorHistory from '@/components/DoctorPage/DoctorHistory';
+import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
+import SupportPage from '@/components/SupportPage/SupportPage';
+
 
 const DoctorPage = () => {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -35,6 +38,10 @@ const DoctorPage = () => {
           return <DoctorHistory />;
         case 'profile':
           return <DoctorProfile />;
+        case 'chat':
+          return <ChatFunctionality />;
+        case 'support':
+          return <SupportPage />;
         case 'payment-history':
           return <DoctorPaymentHistoryPage />;
         default:

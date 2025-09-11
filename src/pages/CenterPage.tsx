@@ -517,6 +517,8 @@ import CenterDashboard from '@/components/CenterPage/CenterDashboard';
 import CenterProfile from '@/components/CenterPage/CenterProfile';
 import PaymentHistory from '@/components/CenterPage/InstitutionPaymentPage';
 import PayManagement from '@/components/CenterPage/PayManagement';
+import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
+import SupportPage from '@/components/SupportPage/SupportPage';
 
 interface Study {
   orderId: string;
@@ -602,7 +604,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
           </>
         );
       case 'payment-history':
@@ -613,7 +615,19 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+           
+          </>
+        );
+        case 'chat':
+        return (
+          <>
+            <ChatFunctionality />
+          </>
+        );
+      case 'support':
+        return (
+          <>
+            <SupportPage />
           </>
         );
       case 'pay-management':
@@ -624,7 +638,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+          
           </>
         );
       case 'assigned':
@@ -662,7 +676,7 @@ const CenterPage: React.FC = () => {
               handleRefresh={handleRefresh}
             />
             <CompletedStudiesTable />
-            <Legend />
+            
           </>
         );
       case 'profile':
@@ -673,7 +687,7 @@ const CenterPage: React.FC = () => {
              
               handleViewStudy={handleViewStudy}
             />
-            <Legend />
+            
           </>
         );
       default:

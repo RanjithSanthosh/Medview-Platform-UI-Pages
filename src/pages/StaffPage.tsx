@@ -118,7 +118,7 @@ const StaffPage: React.FC = () => {
               handleRefresh={handleRefresh}
             />
             <CompletedStudiesTable handleViewStudy={handleViewStudy} />
-            <Legend />
+          
           </>
         );
       case 'assigned':

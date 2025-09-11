@@ -10,6 +10,9 @@ import {
   FaBars,
   FaTimes,
 } from 'react-icons/fa';
+import { FaMessage } from "react-icons/fa6"; // close button icon
+import { FcSupport } from "react-icons/fc";
+import { SlSupport } from "react-icons/sl";
 
 interface DoctorSidebarProps {
   currentView: string;
@@ -22,10 +25,12 @@ const navItems = [
   { name: 'Dashboard', icon: <FaTachometerAlt />, view: 'dashboard' },
   { name: 'Pending Cases', icon: <FaHourglassHalf />, view: 'pending' },
   { name: 'Completed Cases', icon: <FaCheckCircle />, view: 'completed' },
-  { name: 'Payment', icon: <FaWallet />, view: 'payment' },
   { name: 'History', icon: <FaHistory />, view: 'history' },
-  { name: 'Profile', icon: <FaUser />, view: 'profile' },
+  { name: 'Withdrawal', icon: <FaWallet />, view: 'payment' },
   { name: 'Payment History', icon: <FaUser />, view: 'payment-history' },
+  { name: "Chat", icon: <FaMessage />, view: "chat" },
+  { name: 'Profile', icon: <FaUser />, view: 'profile' },
+  { name: "Support", icon: <SlSupport />, view: "support" },
 ];
 
 const DoctorSidebar: React.FC<DoctorSidebarProps> = ({

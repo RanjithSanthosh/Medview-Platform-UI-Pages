@@ -6,6 +6,8 @@ import {
 } from "react-icons/fa";
 import { FiX } from "react-icons/fi"; // close icon
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
+import { FaMessage } from "react-icons/fa6"; // close button icon
+import { SlSupport } from "react-icons/sl";
 
 interface DoctorSidebarProps {
   currentView: string;
@@ -18,9 +20,11 @@ const navItems = [
   { name: "Dashboard", icon: <FaTachometerAlt />, view: "dashboard" },
   { name: "Assigned Case", icon: <FaHistory />, view: "assigned" },
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
-  { name: "Profile", icon: <FaUser />, view: "profile" },
-  { name: "Payment History", icon: <RiMoneyRupeeCircleFill />, view: "payment-history" },
   { name: "Pay Management", icon: <RiMoneyRupeeCircleFill />, view: "pay-management" },
+  { name: "Payment History", icon: <RiMoneyRupeeCircleFill />, view: "payment-history" },
+  { name: "Chat", icon: <FaMessage />, view: "chat" },
+  { name: "Profile", icon: <FaUser />, view: "profile" },
+  { name: "Support", icon: <SlSupport />, view: "support" },
 ];
 
 const DoctorSidebar: React.FC<DoctorSidebarProps> = ({
