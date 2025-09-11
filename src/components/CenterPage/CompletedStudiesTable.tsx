@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import { FaEnvelope } from "react-icons/fa";
 import { FiLink, FiFileText, FiImage, FiEye, FiX, FiDownload, FiPrinter } from "react-icons/fi";
