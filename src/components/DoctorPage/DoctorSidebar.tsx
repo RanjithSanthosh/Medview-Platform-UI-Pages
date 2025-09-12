@@ -26,7 +26,7 @@ const navItems = [
   { name: "Pending Cases", icon: <FaHourglassHalf />, view: "pending" },
   { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
   { name: "History", icon: <FaHistory />, view: "history" },
-  { name: "Withdrawal", icon: <FaWallet />, view: "payment" },
+  { name: "Withdrawal", icon: <FaWallet />, view: "withdrawal" },
   { name: "Payment History", icon: <FaUser />, view: "payment-history" },
   { name: "Chat", icon: <FaMessage />, view: "chat" },
   { name: "Profile", icon: <FaUser />, view: "profile" },
@@ -64,14 +64,12 @@ const DoctorSidebar: React.FC<DoctorSidebarProps> = ({
       {/* Sidebar */}
       <div
         className={[
-          // base
-          "fixed inset-y-0 left-0 z-50 bg-medical-sidebar transform transition-all duration-300 ease-in-out group",
-          // width behavior
+          // mobile: fixed and z-50 when open, hidden when closed
+          sidebarOpen ? "fixed inset-y-0 left-0 z-50" : "hidden",
+          // desktop: static, always visible
+          "lg:block lg:static",
+          "bg-medical-sidebar transform transition-all duration-300 ease-in-out group",
           "w-64 lg:w-16 lg:hover:w-64",
-          // mobile open/close
-          sidebarOpen ? "translate-x-0" : "-translate-x-full",
-          // desktop always visible
-          "lg:translate-x-0 lg:static",
         ].join(" ")}
       >
         <div className="flex flex-col h-full">

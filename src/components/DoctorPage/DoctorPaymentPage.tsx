@@ -55,7 +55,7 @@ const DoctorPaymentPage: React.FC = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6 max-w-7xl mx-auto space-y-8">
+  <div className="p-4 sm:p-6 w-full space-y-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-medical-gray-800 text-center sm:text-left">
         Payment Dashboard
       </h1>
