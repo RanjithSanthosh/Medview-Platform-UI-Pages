@@ -517,6 +517,7 @@ import CenterDashboard from '@/components/CenterPage/CenterDashboard';
 import CenterProfile from '@/components/CenterPage/CenterProfile';
 import PaymentHistory from '@/components/CenterPage/InstitutionPaymentPage';
 import PayManagement from '@/components/CenterPage/PayManagement';
+import CaseHistory from '@/components/CenterPage/CaseHistory';
 import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
 import SupportPage from '@/components/SupportPage/SupportPage';
 
@@ -684,6 +685,17 @@ const CenterPage: React.FC = () => {
           <>
 
             <CenterProfile
+             
+              handleViewStudy={handleViewStudy}
+            />
+            
+          </>
+        );
+      case 'case-history':
+        return (
+          <>
+
+            <CaseHistory
              
               handleViewStudy={handleViewStudy}
             />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   FaTachometerAlt,
@@ -9,7 +9,7 @@ import {
   FaHistory,
   FaBars,
   FaTimes,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6"; // close button icon
 import { FcSupport } from "react-icons/fc";
 import { SlSupport } from "react-icons/sl";
@@ -17,19 +17,19 @@ import { SlSupport } from "react-icons/sl";
 interface DoctorSidebarProps {
   currentView: string;
   onViewChange: (view: string) => void;
-  sidebarOpen: boolean;                 // controls mobile open/close
+  sidebarOpen: boolean; // controls mobile open/close
   onToggleSidebar: (open: boolean) => void; // new: toggle handler from parent
 }
 
 const navItems = [
-  { name: 'Dashboard', icon: <FaTachometerAlt />, view: 'dashboard' },
-  { name: 'Pending Cases', icon: <FaHourglassHalf />, view: 'pending' },
-  { name: 'Completed Cases', icon: <FaCheckCircle />, view: 'completed' },
-  { name: 'History', icon: <FaHistory />, view: 'history' },
-  { name: 'Withdrawal', icon: <FaWallet />, view: 'payment' },
-  { name: 'Payment History', icon: <FaUser />, view: 'payment-history' },
+  { name: "Dashboard", icon: <FaTachometerAlt />, view: "dashboard" },
+  { name: "Pending Cases", icon: <FaHourglassHalf />, view: "pending" },
+  { name: "Completed Cases", icon: <FaCheckCircle />, view: "completed" },
+  { name: "History", icon: <FaHistory />, view: "history" },
+  { name: "Withdrawal", icon: <FaWallet />, view: "payment" },
+  { name: "Payment History", icon: <FaUser />, view: "payment-history" },
   { name: "Chat", icon: <FaMessage />, view: "chat" },
-  { name: 'Profile', icon: <FaUser />, view: 'profile' },
+  { name: "Profile", icon: <FaUser />, view: "profile" },
   { name: "Support", icon: <SlSupport />, view: "support" },
 ];
 
@@ -65,14 +65,14 @@ const DoctorSidebar: React.FC<DoctorSidebarProps> = ({
       <div
         className={[
           // base
-          'fixed inset-y-0 left-0 z-50 bg-medical-sidebar transform transition-all duration-300 ease-in-out group',
+          "fixed inset-y-0 left-0 z-50 bg-medical-sidebar transform transition-all duration-300 ease-in-out group",
           // width behavior
-          'w-64 lg:w-16 lg:hover:w-64',
+          "w-64 lg:w-16 lg:hover:w-64",
           // mobile open/close
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full',
+          sidebarOpen ? "translate-x-0" : "-translate-x-full",
           // desktop always visible
-          'lg:translate-x-0 lg:static',
-        ].join(' ')}
+          "lg:translate-x-0 lg:static",
+        ].join(" ")}
       >
         <div className="flex flex-col h-full">
           {/* Header / Brand */}
@@ -130,32 +130,31 @@ const DoctorSidebar: React.FC<DoctorSidebarProps> = ({
                   //   </span>
                   // </li>
                   <li
-  key={item.name}
-  onClick={() => {
-    onViewChange(item.view);
-    onToggleSidebar(false);
-  }}
-  className={[
-    'flex items-center px-4 py-3 mb-2 cursor-pointer transition-colors whitespace-nowrap',
-    active
-      ? 'text-medical-blue bg-medical-blue/10'
-      : 'text-white hover:text-medical-blue hover:bg-medical-blue/5',
-  ].join(' ')}
->
-  <div className="text-xl">{item.icon}</div>
-  <span
-    className={[
-      'ml-4 transition-opacity duration-300',
-      // mobile: labels always visible
-      'opacity-100',
-      // desktop: hide when collapsed, show on hover/expand
-      'lg:opacity-0 lg:group-hover:opacity-100',
-    ].join(' ')}
-  >
-    {item.name}
-  </span>
-</li>
-
+                    key={item.name}
+                    onClick={() => {
+                      onViewChange(item.view);
+                      onToggleSidebar(false);
+                    }}
+                    className={[
+                      "flex items-center px-4 py-3 mb-2 cursor-pointer transition-colors whitespace-nowrap",
+                      active
+                        ? "text-medical-blue bg-medical-blue/10"
+                        : "text-white hover:text-medical-blue hover:bg-medical-blue/5",
+                    ].join(" ")}
+                  >
+                    <div className="text-xl">{item.icon}</div>
+                    <span
+                      className={[
+                        "ml-4 transition-opacity duration-300",
+                        // mobile: labels always visible
+                        "opacity-100",
+                        // desktop: hide when collapsed, show on hover/expand
+                        "lg:opacity-0 lg:group-hover:opacity-100",
+                      ].join(" ")}
+                    >
+                      {item.name}
+                    </span>
+                  </li>
                 );
               })}
             </ul>
