@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 import Sidebar from '@/components/AdminPage/Sidebar';
 import Header from '@/components/AdminPage/Header';
@@ -17,11 +14,9 @@ import PaymentInvoice from '@/components/AdminPage/PaymentInvoice';
 import SupportPage from '@/components/SupportPage/SupportPage';
 import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
 import InstitutionPayment from '@/components/AdminPage/InstitutionReceiptsPage';
-import DoctorPayment from '@/components/AdminPage/DoctorPaymentHistory';
+import DoctorPaymentPage from '@/components/DoctorPage/DoctorPaymentPage';
 import DoctorDetailes from '@/components/AdminPage/DoctorDetailes';
 import TechnicianDetailes from '@/components/AdminPage/TechnicianDetailes';
-
-
 
 interface Study {
   orderId: string;
@@ -60,24 +55,13 @@ const activeStudiesData: Study[] = [
   },
 ];
 
-const doctorNames = [
-  'Dr. Gopinath',
-  'Dr. Prem Kumar',
-  'Dr. Sarah Johnson',
-  'Dr. Michael Chen',
-  'Dr. Priya Sharma',
-  'Dr. Arvind Menon',
-  'Telerad Providers',
-  'Quest Teleradiology Solutions',
-];
-
 const CenterPage: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   
   const [searchTerm, setSearchTerm] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [currentView, setCurrentView] = useState('dashboard'); // ✅ Added missing state
+  const [currentView, setCurrentView] = useState('dashboard');
 
   const handleSearch = () => {
     console.log('Search clicked');
@@ -91,193 +75,85 @@ const CenterPage: React.FC = () => {
     console.log('View Study clicked');
   };
 
-  const filteredData = activeStudiesData.filter(
-    (study) =>
-      study.orderId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      study.patientName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   const renderContent = () => {
-    switch (currentView) {
-      case 'dashboard':
-        return (
-          <>
+    const contentSwitch = () => {
+      switch (currentView) {
+        case 'dashboard':
+          return <CenterDashboard />;
+        case 'doctor':
+          return <DoctorDetailes />;
+        case 'technician':
+          return <TechnicianDetailes />;
+        case 'institution-payments':
+          return <InstitutionPayment />;
+        case 'doctor-payments':
+          return <DoctorPaymentPage />;
+        case 'support':
+          return <SupportPage />;
+        case 'chat':
+          return <ChatFunctionality />;
+        case 'payment-invoice':
+          return <PaymentInvoice />;
+        case 'case-history':
+          return <AssignHistory />;
+        case 'payment-approval':
+          return <PaymentApproval />;
+        case 'institution-audit':
+          return <InstitutionAudit />;
+        case 'technician-audit':
+          return <TechnicianAudit />;
+        case 'assigned':
+          return (
+            <>
+              <PageHeader
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                startDate={startDate}
+                setStartDate={setStartDate}
+                endDate={endDate}
+                setEndDate={setEndDate}
+                handleSearch={handleSearch}
+                handleRefresh={handleRefresh}
+              />
+              <StudiesTable />
+              <Legend />
+            </>
+          );
+        case 'completed':
+          return (
+            <>
+              <PageHeader
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                startDate={startDate}
+                setStartDate={setStartDate}
+                endDate={endDate}
+                setEndDate={setEndDate}
+                handleSearch={handleSearch}
+                handleRefresh={handleRefresh}
+              />
+              <CompletedStudiesTable handleViewStudy={handleViewStudy} />
+            </>
+          );
+        default:
+          return null;
+      }
+    };
 
-            <CenterDashboard
-             
-              handleViewStudy={handleViewStudy}
-            />
-            
-          </>
-        );
-      case 'doctor':
-        return (
-          <>
-
-            <DoctorDetailes
-             
-              handleViewStudy={handleViewStudy}
-            />
-       
-          </>
-        );
-      case 'technician':
-        return (
-          <>
-
-            <TechnicianDetailes
-             
-              handleViewStudy={handleViewStudy}
-            />
-          
-          </>
-        );
-      case 'institution-payments':
-        return (
-          <>
-
-            <InstitutionPayment
-             
-              handleViewStudy={handleViewStudy}
-            />
-           
-          </>
-        );
-      case 'doctor-payments':
-        return (
-          <>
-
-            <DoctorPayment
-             
-              handleViewStudy={handleViewStudy}
-            />
-           
-          </>
-        );
-      case 'support':
-        return (
-          <>
-
-            <SupportPage
-             
-              handleViewStudy={handleViewStudy}
-            />
-           
-          </>
-        );
-      case 'chat':
-        return (
-          <>
-
-            <ChatFunctionality
-             
-              handleViewStudy={handleViewStudy}
-            />
-          
-          </>
-        );
-      case 'payment-invoice':
-        return (
-          <>
-
-            <PaymentInvoice
-             
-              handleViewStudy={handleViewStudy}
-            />
-           
-          </>
-        );
-      case 'case-history':
-        return (
-          <>
-
-            <AssignHistory
-             
-              handleViewStudy={handleViewStudy}
-            />
-          
-          </>
-        );
-      case 'payment-approval':
-        return (
-          <>
-
-            <PaymentApproval
-             
-              handleViewStudy={handleViewStudy}
-            />
-           
-          </>
-        );
-      case 'institution-audit':
-        return (
-          <>
-
-            <InstitutionAudit
-             
-              handleViewStudy={handleViewStudy}
-            />
-        
-          </>
-        );
-      case 'technician-audit':
-        return (
-          <>
-
-            <TechnicianAudit
-             
-              handleViewStudy={handleViewStudy}
-            />
-           
-          </>
-        );
-      case 'assigned':
-        return (
-          <>
-            <PageHeader
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              startDate={startDate}
-              setStartDate={setStartDate}
-              endDate={endDate}
-              setEndDate={setEndDate}
-              handleSearch={handleSearch}
-              handleRefresh={handleRefresh}
-            />
-            <StudiesTable
-             
-              handleViewStudy={handleViewStudy}
-            />
-            <Legend />
-          </>
-        );
-      case 'completed':
-        return (
-          <>
-            <PageHeader
-              title="Completed Studies"
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              startDate={startDate}
-              setStartDate={setStartDate}
-              endDate={endDate}
-              setEndDate={setEndDate}
-              handleSearch={handleSearch}
-              handleRefresh={handleRefresh}
-            />
-            <CompletedStudiesTable />
-            
-          </>
-        );
-
-      default:
-        return null;
+    // Conditionally apply the wrapper. The InstitutionAudit page has its own background and padding.
+    if (currentView === 'institution-audit') {
+      return contentSwitch();
     }
+
+    return (
+      <div className="bg-white rounded-lg shadow-sm border border-medical-gray-200 flex flex-col min-h-full">
+        {contentSwitch()}
+      </div>
+    );
   };
 
   return (
-    <div className="min-h-screen bg-medical-gray-50 flex">
-      {/* Sidebar with view change callback */}
+    <div className="bg-medical-gray-50 flex h-screen">
       <Sidebar
         currentView={currentView}
         onViewChange={setCurrentView}
@@ -290,12 +166,10 @@ const CenterPage: React.FC = () => {
           onClick={() => setSidebarOpen(false)}
         />
       )}
-      <div className="flex-1 lg:ml-0 min-w-0">
-        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        <div className="p-2 lg:p-4 h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hide">
-          <div className="bg-white rounded-lg shadow-sm border border-medical-gray-200 min-h-full flex flex-col">
-            {renderContent()}
-          </div>
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Header sidebarOpen={sidebarOpen} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <div className="flex-1 overflow-y-auto p-2 lg:p-4">
+          {renderContent()}
         </div>
       </div>
     </div>
@@ -303,6 +177,3 @@ const CenterPage: React.FC = () => {
 };
 
 export default CenterPage;
-
-
-

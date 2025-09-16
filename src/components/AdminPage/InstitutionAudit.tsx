@@ -401,7 +401,7 @@ const InstitutionLoginForm = () => {
             const scanTypeErrors = {};
             Object.keys(chargeCategory.prices).forEach(itemKey => {
                 const price = chargeCategory.prices[itemKey];
-                const itemErrors = {};
+                const itemErrors: { base?: string; withCommunication?: string } = {};
                 if (price.base.trim() === '') {
                     itemErrors.base = "Required";
                 } else if (isNaN(parseFloat(price.base)) || parseFloat(price.base) < 0) {
