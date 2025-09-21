@@ -14,9 +14,11 @@ import PaymentInvoice from '@/components/AdminPage/PaymentInvoice';
 import SupportPage from '@/components/SupportPage/SupportPage';
 import ChatFunctionality from '@/components/TechnicianPage/chat/chatFuncionality';
 import InstitutionPayment from '@/components/AdminPage/InstitutionReceiptsPage';
-import DoctorPaymentPage from '@/components/DoctorPage/DoctorPaymentPage';
+// import DoctorPaymentPage from '@/components/DoctorPage/DoctorPaymentPage';
 import DoctorDetailes from '@/components/AdminPage/DoctorDetailes';
 import TechnicianDetailes from '@/components/AdminPage/TechnicianDetailes';
+import DoctorPaymentPage from '@/components/AdminPage/DoctorPaymentHistory';
+
 
 interface Study {
   orderId: string;
